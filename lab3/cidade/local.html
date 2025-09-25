@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Venda do Pinheiro</title>
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .header {
+      background-color: #f1f1f1;
+      padding: 30px;
+      text-align: center;
+    }
+
+    #navbar {
+      position: sticky;
+      top: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    #navbar a.active {
+      background-color: #04AA6D;
+      color: white;
+    }
+
+    main {
+      padding: 16px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #f1f1f1;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- header -->
+  <div class="header">
+      <img src="images/vdp.jpg" alt="Parque da Venda" width="450px">
+    <h1>Venda do Pinheiro</h1>
+    <p>Uma bela aldeia 🌲</p>
+  </div>
+
+  <!-- barra -->
+  <div id="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="local.html">Localização</a>
+    <a href="multimedia.html">Multimédia</a>
+    <a href="info.html">Informação</a>
+  </div>
+
+  <!-- corpo -->
+  <main>
+    <h2>O que saber sobre a localização...</h2>
+    <p>Localizado entre o campo, a cidade e a praia.<p>
+
+    </p> Num lado temos a Ericeira, de outro Lisboa e, entre as duas, aldeias tradicionais portuguesas.</p>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24830.66366252831!2d-9.246439361689701!3d38.92779533988676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd1ed50850b227f9%3A0x1870590a39a98069!2sVenda%20do%20Pinheiro!5e0!3m2!1spt-PT!2spt!4v1758181496578!5m2!1spt-PT!2spt"
+      width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </main>
+
+  <!-- rodape -->
+  <footer>
+    <p>DIW 2025</p>
+  </footer>
+
+</body>
+</html>

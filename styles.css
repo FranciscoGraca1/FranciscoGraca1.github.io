@@ -1,3 +1,42 @@
-body {
-    background-color: #c6c1be;
+* {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header,footer, section, footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+}
+
+header {
+  background: rgb(75, 73, 73);
+  position: sticky;
+  height: 10vh;
+  top: 0;
+}
+
+section:nth-child(1) {
+  background-image: url("images/hero.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+;
+}
+
+section:nth-child(2) {
+  height: 100vh;
+  background: rgb(92, 91, 90);
+}
+
+section:nth-child(3) {
+  height: 100vh;
+}
+
+footer {
+  height: 10vh;
+  background: black;
+  color: white;
 }
