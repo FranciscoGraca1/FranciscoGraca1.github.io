@@ -88,6 +88,33 @@ nav ul li a.active {
   }
 
   /* Mostrar menu ao passar o rato no hamburguer */
+  /* Ícone hamburguer */
+.hamburguer {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* escondido no desktop */
+  color: white;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav {
+    position: relative; /* para o dropdown se posicionar em relação ao nav */
+  }
+
+  nav ul {
+    display: none;              /* esconde menu normal */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 40px;                  /* logo por baixo do hamburguer */
+    left: 0;                    /* encostado ao lado esquerdo */
+    padding: 10px;
+    border-radius: 8px;
+    width: 150px;
+  }
+
+  /* Mostrar menu ao clicar/hover no hamburguer */
   .hamburguer:hover + ul,
   nav ul:hover {
     display: flex;
@@ -96,6 +123,7 @@ nav ul li a.active {
   .hamburguer {
     display: block; /* aparece só no mobile */
   }
+}
 }
 
 /* =====================================================
