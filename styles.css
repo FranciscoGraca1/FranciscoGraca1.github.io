@@ -1,6 +1,4 @@
-/* =====================================================
-   RESET BÁSICO
-   ===================================================== */
+/* ------------------ RESET BÁSICO ------------------ */
 * {
   font-family: sans-serif;
   padding: 0;
@@ -8,10 +6,10 @@
   box-sizing: border-box; /* evita que o padding aumente a largura */
 }
 
-/* =====================================================
-   ESTRUTURA GERAL
-   ===================================================== */
-header, footer, section {
+/* ------------------ ESTRUTURA GERAL ------------------ */
+header,
+footer,
+section {
   display: flex;
   justify-content: center;
   font-size: 5vh; /* texto grande por padrão nas sections */
@@ -24,116 +22,62 @@ footer {
   align-items: center;
 }
 
-/* =====================================================
-   NAVBAR (MENU PRINCIPAL)
-   ===================================================== */
+/* ------------------ NAVBAR (MENU) ------------------ */
 nav {
-  background-color: #333;   /* fundo escuro */
-  padding: 8px 20px;        /* espaçamento interno */
-  width: 100%;              /* ocupa a largura toda */
-  margin: 0;                
-  position: fixed;          /* fixa no topo */
+  background-color: #333; /* fundo escuro */
+  padding: 8px 20px; /* espaçamento interno */
+  width: 100%; /* ocupa a largura toda */
+  margin: 0;
+  position: fixed; /* fixa no topo */
   top: 0;
   left: 0;
-  z-index: 1000;            /* fica acima de outros elementos */
+  z-index: 1000; /* fica acima de outros elementos */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 nav ul {
-  list-style: none;         /* remove os pontos da lista */
+  list-style: none; /* remove os pontos da lista */
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 15px;                /* espaço entre os links */
+  gap: 15px; /* espaço entre os links */
   justify-content: flex-start;
 }
 
 nav ul li a {
-  color: white;             /* cor padrão */
-  text-decoration: none;    /* remove o sublinhado */
+  color: white; /* cor padrão */
+  text-decoration: none; /* remove o sublinhado */
   font-weight: 500;
   font-size: 16px;
-  transition: 0.3s;         /* animação suave */
+  transition: 0.3s; /* animação suave */
 }
 
 nav ul li a:hover {
-  color: #ff9800;           /* cor ao passar o rato */
+  color: #ff9800; /* cor ao passar o rato */
 }
 
 nav ul li a.active {
-  color: #ff9800;           /* link ativo destacado */
+  color: #ff9800; /* link ativo destacado */
   font-weight: bold;
 }
 
-/* =====================================================
-   MENU HAMBURGUER (RESPONSIVO)
-   ===================================================== */
-.hamburguer {
-  font-size: 2rem;
-  cursor: pointer;
+/* ------------------ BOTÃO HAMBÚRGUER ------------------ */
+.menu-toggle {
   display: none; /* escondido no desktop */
-  color: white;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  nav ul {
-    display: none;              /* esconde menu normal */
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 50px;
-    right: 20px;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  /* Mostrar menu ao passar o rato no hamburguer */
-  /* Ícone hamburguer */
-.hamburguer {
-  font-size: 2rem;
+  font-size: 24px;
   cursor: pointer;
-  display: none; /* escondido no desktop */
   color: white;
+  user-select: none;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  nav {
-    position: relative; /* para o dropdown se posicionar em relação ao nav */
-  }
-
-  nav ul {
-    display: none;              /* esconde menu normal */
-    flex-direction: column;
-    background: #444;
-    position: absolute;
-    top: 40px;                  /* logo por baixo do hamburguer */
-    left: 0;                    /* encostado ao lado esquerdo */
-    padding: 10px;
-    border-radius: 8px;
-    width: 150px;
-  }
-
-  /* Mostrar menu ao clicar/hover no hamburguer */
-  .hamburguer:hover + ul,
-  nav ul:hover {
-    display: flex;
-  }
-
-  .hamburguer {
-    display: block; /* aparece só no mobile */
-  }
-}
-}
-
-/* =====================================================
-   SECTIONS (CONTEÚDO PRINCIPAL - LANDING PAGE)
-   ===================================================== */
+/* ------------------ SECTIONS (CONTEÚDO PRINCIPAL) ------------------ */
 section:nth-child(1) {
   background-image: url("images/hero.jpeg");
   background-position: center;
   background-size: cover;
-  height: 100vh;            /* ocupa a altura total do ecrã */
+  height: 100vh; /* ocupa a altura total do ecrã */
 }
 
 section:nth-child(2) {
@@ -146,19 +90,17 @@ section:nth-child(3) {
   background: white;
 }
 
-/* =====================================================
-   PÁGINA DE PROJETOS / LABS
-   ===================================================== */
+/* ------------------ PÁGINA DE PROJETOS ------------------ */
 .projetos {
-  flex-direction: column;   /* organiza em coluna */
+  flex-direction: column; /* organiza em coluna */
   align-items: center;
   background: linear-gradient(to bottom, #ffe0cc, #ffcccc);
-  padding: 80px 20px;       /* espaço para não colar à navbar */
+  padding: 80px 20px; /* espaço para não colar à navbar */
   font-size: 16px;
 }
 
 .container {
-  max-width: 1000px;        /* limita a largura */
+  max-width: 1000px; /* limita a largura */
   width: 100%;
 }
 
@@ -185,25 +127,48 @@ section:nth-child(3) {
 
 /* Cada card de Lab como link */
 .lab-card {
-  display: block;             /* faz o <a> comportar-se como bloco */
+  display: block; /* faz o <a> comportar-se como bloco */
   background: rgb(255, 255, 255); /* cor de fundo */
   padding: 15px 20px;
   border-radius: 8px;
   width: 180px;
   text-align: left;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 
-  text-decoration: none;      /* remove sublinhado */
-  color: black;               /* texto preto */
+  text-decoration: none; /* remove sublinhado */
+  color: black; /* texto preto */
   font-weight: normal;
 
   transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
-/* Efeito hover */
+/* Efeito hover nos labs */
 .lab-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  background: #616060;        /* cor ao passar o rato */
-  color: white;               /* texto branco em hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: #616060; /* tom mais escuro no hover */
+  color: white;
+}
+
+/* ------------------ RESPONSIVIDADE ------------------ */
+@media (max-width: 768px) {
+  nav ul {
+    display: none; /* esconde lista no mobile */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  /* mostra menu quando hover no botão ou no nav */
+  nav:hover ul {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block; /* aparece em mobile */
+  }
 }
