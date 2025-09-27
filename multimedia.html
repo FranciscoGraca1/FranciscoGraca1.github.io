@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Multimédia</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Sobrescreve as sections só nesta página */
+    .multimedia section {
+      height: 100vh;             /* ocupa o ecrã inteiro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .fotos {
+      background: #34495e; /* azul escuro */
+    }
+
+    .video {
+      background: #16a085; /* verde azulado */
+    }
+
+    .poesia {
+      background: #8e44ad; /* roxo */
+      font-style: italic;
+    }
+
+    .fotos img {
+      max-width: 80%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .video iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .poesia p {
+      max-width: 600px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body class="multimedia">
+
+  <!-- NAVBAR -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="projetos.html">Projetos</a></li>
+      <li><a href="cadeira.html">Interfaces Web</a></li>
+      <li><a href="multimedia.html" class="active">Multimédia</a></li>
+    </ul>
+  </nav>
+
+  <!-- FOTOGRAFIAS -->
+  <section class="fotos">
+    <h2>Fotografias 📸</h2>
+    <img src="images/foto1.jpg" alt="Fotografia exemplo">
+  </section>
+
+  <!-- VÍDEO -->
+  <section class="video">
+    <h2>Vídeo 🎥</h2>
+    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            allowfullscreen></iframe>
+  </section>
+
+  <!-- POESIA -->
+  <section class="poesia">
+    <h2>Poesia ✍️</h2>
+    <p>
+      Nas linhas do código eu crio,<br>
+      mundos de cor e de som.<br>
+      Web é poesia em fio,<br>
+      que liga ideias em tom.
+    </p>
+  </section>
+
+</body>
+</html>

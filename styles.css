@@ -1,42 +1,181 @@
+/* =====================================================
+   RESET BÁSICO
+   ===================================================== */
 * {
   font-family: sans-serif;
   padding: 0;
   margin: 0;
+  box-sizing: border-box; /* evita que o padding aumente a largura */
 }
 
-header,footer, section, footer {
+/* =====================================================
+   ESTRUTURA GERAL
+   ===================================================== */
+header, footer, section {
   display: flex;
   justify-content: center;
-  align-items: center;
-  font-size: 5vh;
-}
-
-header {
-  background: rgb(75, 73, 73);
-  position: sticky;
-  height: 10vh;
-  top: 0;
-}
-
-section:nth-child(1) {
-  background-image: url("images/hero.jpeg");
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
-;
-}
-
-section:nth-child(2) {
-  height: 100vh;
-  background: rgb(92, 91, 90);
-}
-
-section:nth-child(3) {
-  height: 100vh;
+  font-size: 5vh; /* texto grande por padrão nas sections */
 }
 
 footer {
   height: 10vh;
   background: black;
   color: white;
+  align-items: center;
+}
+
+/* =====================================================
+   NAVBAR (MENU PRINCIPAL)
+   ===================================================== */
+nav {
+  background-color: #333;   /* fundo escuro */
+  padding: 8px 20px;        /* espaçamento interno */
+  width: 100%;              /* ocupa a largura toda */
+  margin: 0;                
+  position: fixed;          /* fixa no topo */
+  top: 0;
+  left: 0;
+  z-index: 1000;            /* fica acima de outros elementos */
+}
+
+nav ul {
+  list-style: none;         /* remove os pontos da lista */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 15px;                /* espaço entre os links */
+  justify-content: flex-start;
+}
+
+nav ul li a {
+  color: white;             /* cor padrão */
+  text-decoration: none;    /* remove o sublinhado */
+  font-weight: 500;
+  font-size: 16px;
+  transition: 0.3s;         /* animação suave */
+}
+
+nav ul li a:hover {
+  color: #ff9800;           /* cor ao passar o rato */
+}
+
+nav ul li a.active {
+  color: #ff9800;           /* link ativo destacado */
+  font-weight: bold;
+}
+
+/* =====================================================
+   MENU HAMBURGUER (RESPONSIVO)
+   ===================================================== */
+.hamburguer {
+  font-size: 2rem;
+  cursor: pointer;
+  display: none; /* escondido no desktop */
+  color: white;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  nav ul {
+    display: none;              /* esconde menu normal */
+    flex-direction: column;
+    background: #444;
+    position: absolute;
+    top: 50px;
+    right: 20px;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  /* Mostrar menu ao passar o rato no hamburguer */
+  .hamburguer:hover + ul,
+  nav ul:hover {
+    display: flex;
+  }
+
+  .hamburguer {
+    display: block; /* aparece só no mobile */
+  }
+}
+
+/* =====================================================
+   SECTIONS (CONTEÚDO PRINCIPAL - LANDING PAGE)
+   ===================================================== */
+section:nth-child(1) {
+  background-image: url("images/hero.jpeg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;            /* ocupa a altura total do ecrã */
+}
+
+section:nth-child(2) {
+  height: 100vh;
+  background: rgb(92, 91, 90); /* cinzento */
+}
+
+section:nth-child(3) {
+  height: 100vh;
+  background: white;
+}
+
+/* =====================================================
+   PÁGINA DE PROJETOS / LABS
+   ===================================================== */
+.projetos {
+  flex-direction: column;   /* organiza em coluna */
+  align-items: center;
+  background: linear-gradient(to bottom, #ffe0cc, #ffcccc);
+  padding: 80px 20px;       /* espaço para não colar à navbar */
+  font-size: 16px;
+}
+
+.container {
+  max-width: 1000px;        /* limita a largura */
+  width: 100%;
+}
+
+.projetos h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.projetos p {
+  margin-bottom: 30px;
+  color: #555;
+  font-size: 16px;
+}
+
+/* Container dos labs */
+.labs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Cada card de Lab como link */
+.lab-card {
+  display: block;             /* faz o <a> comportar-se como bloco */
+  background: rgb(255, 255, 255); /* cor de fundo */
+  padding: 15px 20px;
+  border-radius: 8px;
+  width: 180px;
+  text-align: left;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+
+  text-decoration: none;      /* remove sublinhado */
+  color: black;               /* texto preto */
+  font-weight: normal;
+
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+/* Efeito hover */
+.lab-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+  background: #616060;        /* cor ao passar o rato */
+  color: white;               /* texto branco em hover */
 }
