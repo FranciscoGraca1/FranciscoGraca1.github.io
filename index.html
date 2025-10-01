@@ -16,86 +16,68 @@
 
       <!-- Links principais -->
       <ul>
-        <li><a href="index.html" class="active">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadeira.html">Interfaces Web</a></li>
+        <li><a href="#hero" class="active">Início</a></li>
+        <li><a href="#projetos">Labs</a></li>
+        <li><a href="#sobre">Sobre</a></li>
       </ul>
     </nav>
   </header>
 
-<main>
-      
-      <section class="hero">
-  <div class="hero-text">
-    <h1>O meu nome é Francisco Graça e sou estudante de Engenharia Informática na Universidade Lusófona</h1>
-    <p>Tenho experiência em cibersegurança e estou a aprender web developing 🚀</p>
-  </div>
-</section>
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-text">
+        <h1>Moscovo é o coração pulsante da Rússia, onde tradição imperial e modernidade se encontram.</h1>
+      </div>
+    </section>
 
-<style>
-/* Secção com imagem de fundo */
-.hero {
-  height: 100vh; /* ocupa a tela inteira */
-  background: url("images/foto.jpg") no-repeat center center/cover; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
+    <!-- PROJETOS -->
+    <section id="projetos" class="projetos">
+      <div class="container">
+        <h2>Projetos / Labs</h2>
+        <p>Alguns exercícios desenvolvidos ao longo da UC.</p>
 
-/* Caixa do texto */
-.hero-text {
-  background: rgba(0, 0, 0, 0.6); /* fundo preto translúcido */
-  color: #fff;
-  padding: 30px;
-  border-radius: 12px;
-  max-width: 700px;
-  line-height: 1.6;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.6); /* sombra envolvente */
-}
+        <div class="labs">
+          <a href="lab1/cidade/index.html" class="lab-card">
+            <h3>Lab 1</h3>
+            <p>Estrutura base e semântica</p>
+          </a>
 
-/* Título */
-.hero-text h1 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8); /* sombra no texto */
-}
+          <a href="lab2/cidade/index.html" class="lab-card">
+            <h3>Lab 2</h3>
+            <p>Estilos e layout responsivo</p>
+          </a>
 
-/* Parágrafo */
-.hero-text p {
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
-}
-</style>
+          <a href="lab3/cidade/index.html" class="lab-card">
+            <h3>Lab 3</h3>
+            <p>Interatividade com JS</p>
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <section>
+    <!-- SOBRE -->
+    <section id="sobre" class="sobre">
+      <p>Eis a minha primeira página Web!</p>
+      <p>
+        Na Unidade Curricular de
+        <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
+          Desenvolvimento de Interfaces Web
+        </a>
+        abordaremos as seguintes tecnologias Web 🌐
+      </p>
+      <ul>
+        <li>HTML, CSS, JavaScript, React e Next.js</li>
+      </ul>
+      <p>Iremos criar soluções criativas!</p>
+      <img src="images/image.svg" alt="Imagem representativa de tecnologias web" width="300">
+    </section>
+  </main>
 
-   <style>
-  section {
-    display: grid;
-    grid-template-rows: 2% 10%  20% repeat(2, 10%) 48%; /* 5 linhas horizontais, cada uma 20% da altura */
-  }
-</style>
+  <!-- FOOTER -->
+  <footer>
+    <p>Universidade Lusófona © 2025</p>
+  </footer>
 
- <p>
-  </p>
-    <p>Eis a minha primeira página Web!<br></p>
-    <p>
-      Na Unidade Curricular de
-      <a href="https://moodle.ensinolusofona.pt/course/view.php?id=11232">
-        Desenvolvimento de Interfaces Web
-      </a>
-      abordaremos as seguintes tecnologias Web &#127760;
-    </p>
-    <ul>
-      <li>HTML, CSS , JavaScript , React e Next.js</li>
-    </ul>
-    <p>Iremos criar soluções criativas!</p>
-    <img src="images/image.svg" alt="Imagem representativa de tecnologias web" width="300">
-  </section>
-</main>
-
-<footer>
-  <p>Universidade Lusófona © 2025</p>
-</footer>
+</body>
+</html>

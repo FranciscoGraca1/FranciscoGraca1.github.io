@@ -1,26 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-        <nav>
-  <a href="index.html">Home</a>
-  <a href="local.html">Localização</a>
-  <a href="multimedia.html">Multimédia</a>
-  <a href="info.html">Informação</a>
-</nav>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>MULTIMEDIA</h1>
-        </header>
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página Multimédia</title>
+
+   <!-- HEADER -->
+  <header>
+    <nav>
+      <!-- Ícone do menu (aparece em mobile) -->
+      <span class="menu-toggle">&#9776;</span>
+
+      <!-- Links principais -->
+      <ul>
+        <li><a href="index.html" class="active">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="multimedia.html">Multimédia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    
+    /* Sobrescreve as sections só nesta página */
+    .multimedia section {
+      height: 100vh;             /* ocupa o ecrã inteiro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      color: white;
+      text-align: center;
+    }
+
+    .fotos {
+      background: #34495e; /* azul escuro */
+    }
+
+    .video {
+      background: #16a085; /* verde azulado */
+    }
+
+    .poesia {
+      background: #8e44ad; /* roxo */
+      font-style: italic;
+    }
+
+    .fotos img {
+      max-width: 80%;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .video iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .poesia p {
+      max-width: 600px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body class="multimedia">
+
+  <!-- FOTOGRAFIAS -->
+  <section class="fotos">
+    <h2>Fotografias 📸</h2>
+    <img src="images/imagemgato.jpg" alt="Fotografia exemplo" style="width: 100%; height: 70%; object-fit: cover;">
+  </section>
+
+  <!-- VÍDEO -->
+  <section class="video">
+    <h2>Vídeo 🎥</h2>
+    <iframe src="https://www.youtube.com/embed/IxX_QHay02M?si=pQFMDoulHff3tocS" title="YouTube video player" frameborder="0"
+            allowfullscreen></iframe>
+  </section>
+
+  <!-- POESIA -->
+  <section class="poesia">
+    <h2>Poesia ✍️</h2>
+    <p>
+      Nas linhas do código eu crio,<br>
+      mundos de cor e de som.<br>
+      Web é poesia em fio,<br>
+      que liga ideias em tom.
+    </p>
+  </section>
+
+</body>
 </html>

@@ -25,135 +25,132 @@ footer {
 /* ------------------ NAVBAR (MENU) ------------------ */
 nav {
   background-color: #333; /* fundo escuro */
-  padding: 8px 20px; /* espaçamento interno */
-  width: 100%; /* ocupa a largura toda */
-  margin: 0;
+  padding: 8px 20px;
+  width: 100%;
   position: fixed; /* fixa no topo */
   top: 0;
   left: 0;
-  z-index: 1000; /* fica acima de outros elementos */
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 nav ul {
-  list-style: none; /* remove os pontos da lista */
-  margin: 0;
-  padding: 0;
+  list-style: none;
   display: flex;
-  gap: 15px; /* espaço entre os links */
-  justify-content: flex-start;
+  gap: 15px;
 }
 
 nav ul li a {
-  color: white; /* cor padrão */
-  text-decoration: none; /* remove o sublinhado */
+  color: white;
+  text-decoration: none;
   font-weight: 500;
   font-size: 16px;
-  transition: 0.3s; /* animação suave */
+  transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #ff9800; /* cor ao passar o rato */
+  color: #ff9800;
 }
 
 nav ul li a.active {
-  color: #ff9800; /* link ativo destacado */
+  color: #ff9800;
   font-weight: bold;
 }
 
 /* ------------------ BOTÃO HAMBÚRGUER ------------------ */
 .menu-toggle {
-  display: none; /* escondido no desktop */
+  display: none;
   font-size: 24px;
   cursor: pointer;
   color: white;
   user-select: none;
 }
 
-/* ------------------ SECTIONS (CONTEÚDO PRINCIPAL) ------------------ */
-section:nth-child(1) {
-  background-image: url("images/hero.jpeg");
+/* ------------------ SECTIONS ------------------ */
+.hero {
+  background-image: url("images/hero.jpg");
   background-position: center;
   background-size: cover;
-  height: 100vh; /* ocupa a altura total do ecrã */
-}
-
-section:nth-child(2) {
   height: 100vh;
-  background: rgb(92, 91, 90); /* cinzento */
-}
-
-section:nth-child(3) {
-  height: 100vh;
-  background: white;
-}
-
-/* ------------------ PÁGINA DE PROJETOS ------------------ */
-.projetos {
-  flex-direction: column; /* organiza em coluna */
   align-items: center;
-  background: linear-gradient(to bottom, #ffe0cc, #ffcccc);
-  padding: 80px 20px; /* espaço para não colar à navbar */
+  text-align: center;
+  color: white;
+}
+
+.hero-text {
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+.projetos {
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #612805, #cdb5b5);
+  padding: 80px 20px;
   font-size: 16px;
 }
 
 .container {
-  max-width: 1000px; /* limita a largura */
+  max-width: 1000px;
   width: 100%;
 }
 
 .projetos h2 {
   font-size: 28px;
   margin-bottom: 10px;
-  color: #333;
+  color: #101010;
 }
 
 .projetos p {
   margin-bottom: 30px;
-  color: #555;
+  color: #000000;
   font-size: 16px;
 }
 
-/* Container dos labs */
 .labs {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  margin-top: 20px;
 }
 
-/* Cada card de Lab como link */
 .lab-card {
-  display: block; /* faz o <a> comportar-se como bloco */
-  background: rgb(255, 255, 255); /* cor de fundo */
+  display: block;
+  background: white;
   padding: 15px 20px;
   border-radius: 8px;
   width: 180px;
   text-align: left;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-
-  text-decoration: none; /* remove sublinhado */
-  color: black; /* texto preto */
-  font-weight: normal;
-
+  text-decoration: none;
+  color: black;
   transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
 }
 
-/* Efeito hover nos labs */
 .lab-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-  background: #616060; /* tom mais escuro no hover */
+  background: #8e262664;
   color: white;
+}
+
+.sobre {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  padding: 50px 20px;
+  font-size: 18px;
 }
 
 /* ------------------ RESPONSIVIDADE ------------------ */
 @media (max-width: 768px) {
   nav ul {
-    display: none; /* esconde lista no mobile */
+    display: none;
     flex-direction: column;
     background-color: #333;
     position: absolute;
@@ -163,12 +160,19 @@ section:nth-child(3) {
     padding: 10px 0;
   }
 
-  /* mostra menu quando hover no botão ou no nav */
   nav:hover ul {
     display: flex;
   }
 
   .menu-toggle {
-    display: block; /* aparece em mobile */
+    display: block;
   }
+
+  .hero-text {
+    font-size: 14px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
