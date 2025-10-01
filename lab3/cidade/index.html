@@ -1,26 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-        <nav>
-  <a href="index.html">Home</a>
-  <a href="local.html">Localização</a>
-  <a href="multimedia.html">Multimédia</a>
-  <a href="info.html">Informação</a>
-</nav>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>A minha Cidade</h1>
-        </header>
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home</title>
+
+  <style>
+    :root{
+      --bg:#f4f6f9;
+      --card:#ffffff;
+      --text:#1d2a35;
+      --muted:#5b6b79;
+      --accent:#21c064;      /* verde da barra */
+      --radius:14px;
+      --shadow:0 10px 24px rgba(0,0,0,.08);
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; }
+    body{
+      font-family: "Poppins", Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    /* Barra superior */
+    .topbar{
+      height:18px;
+      background:var(--accent);
+      width:100%;
+    }
+
+    /* Navbar simples */
+    .navbar{
+      background:#2f3542;
+      color:#fff;
+      display:flex;
+      gap:24px;
+      align-items:center;
+      padding:14px 22px;
+      position: sticky;
+      top:0;
+      z-index: 100;
+    }
+    .navbar a{
+      color:#fff; text-decoration:none; font-size:18px;
+      padding:6px 10px; border-radius:8px; transition:.2s;
+    }
+    .navbar a.active{ background:#1abc9c; }
+    .navbar a:hover{ background:rgba(255,255,255,.15); }
+
+    /* Content wrapper */
+    .wrap{
+      max-width: 1280px;
+      margin: 22px auto;
+      padding: 0 18px;
+    }
+
+    /* Grade de imagens */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .card-img{
+      background:var(--card);
+      border-radius: var(--radius);
+      overflow:hidden;
+      box-shadow: var(--shadow);
+    }
+    .card-img img{
+      display:block;
+      width:100%;
+      height:260px;
+      object-fit: cover;
+    }
+
+    /* Card Home */
+    .card{
+      background:var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding:28px;
+      margin-top: 22px;
+    }
+    .card h1{ margin:0 0 14px; font-size: 2.2rem; }
+    .card p{ margin:0; color:var(--muted); font-size:1.1rem; }
+
+    /* Responsivo */
+    @media (max-width: 1024px){
+      .grid{ grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 620px){
+      .grid{ grid-template-columns: 1fr; }
+      .card-img img{ height:220px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="topbar"></div>
+
+  <nav class="navbar">
+    <a class="active" href="index.html">Home</a>
+    <a href="local.html">Localização</a>
+    <a href="multimedia.html">Multimédia</a>
+    <a href="info.html">Informação</a>
+  </nav>
+
+  <main class="wrap">
+    <!-- 3 imagens -->
+    <section class="grid">
+      <div class="card-img">
+        <img src="images/moscovo1.jpg" alt="Imagem 1">
+      </div>
+      <div class="card-img">
+        <img src="images/moscovo2.jpg" alt="Imagem 2">
+      </div>
+      <div class="card-img">
+        <img src="images/moscovo3.jpg" alt="Imagem 3">
+      </div>
+    </section>
+
+    <!-- Card Home -->
+    <section class="card">
+      <h1>Home</h1>
+      <p>A minha cidade é muito linda!!!</p>
+    </section>
+  </main>
+
+</body>
 </html>

@@ -1,26 +1,226 @@
 <!DOCTYPE html>
 <html lang="pt">
-    <head>
-        <meta charset="UTF-8">
-        <title>Cidade</title>
-        <nav>
-  <a href="index.html">Home</a>
-  <a href="local.html">Localização</a>
-  <a href="multimedia.html">Multimédia</a>
-  <a href="info.html">Informação</a>
-</nav>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>INFO</h1>
-        </header>
-        <main>
-            <h2>Home</h2>
-            <p>A minha cidade é muito linda!!!</p>
-        </main>
-        <footer>
-            <p>DIW 2025</p>
-        </footer>
-    </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Informação — Moscovo</title>
+
+  <style>
+    /* ======== TEMA / BASE ======== */
+    :root{
+      --bg: #f4f6f9;
+      --text: #1d2a35;
+      --muted: #5b6b79;
+      --card: #ffffff;
+      --accent: #04AA6D;
+      --grad: linear-gradient(90deg,#1e3c72,#2a5298);
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+      --radius: 12px;
+    }
+    *{ box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body{
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ======== NAVBAR ======== */
+    #navbar{
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--grad);
+      border-bottom: 1px solid rgba(255,255,255,.15);
+    }
+    #navbar a{
+      float: left; display: block; color: #fff;
+      text-decoration: none; padding: 16px 18px; font-size: 18px;
+      transition: .25s;
+    }
+    #navbar a:hover{ background: rgba(255,255,255,.18); color: #ffeb3b; }
+    #navbar a.active{ background: var(--accent); color: #fff; }
+
+    /* ======== WRAPPER ======== */
+    .info-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 16px;
+    }
+    h1, h2, h3 { margin: 0 0 16px; }
+    .lead { margin: 4px 0 14px; color: var(--muted); }
+
+    /* ======== CARDS ======== */
+    .card{
+      background: var(--card);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    /* ======== GRID PRINCIPAL ======== */
+    .info-grid{
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+
+    /* ======== TABELA ======== */
+    .table-wrap{ overflow-x: auto; }
+    table.fact-table{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+    .fact-table th, .fact-table td{
+      border: 1px solid #dcdcdc;
+      padding: 12px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .fact-table thead th{
+      background: #f0f2f7;
+      font-weight: 700;
+    }
+    .fact-table tbody th{
+      background: #f8faff;
+      width: 160px;
+    }
+
+    /* ======== COLUNA DIREITA ======== */
+    .right-col{ display: grid; gap: 20px; }
+    .photo-grid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .photo-grid img, .banner img{
+      width: 100%; height: 220px; object-fit: cover;
+      border-radius: var(--radius); display: block;
+    }
+
+    /* ======== CURIOSIDADES ======== */
+    .card h3{ margin-bottom: 10px; }
+    .card ul{ margin: 0; padding-left: 20px; }
+
+    /* ======== BANNER FINAL ======== */
+    .banner{ margin-top: 22px; }
+    .banner img{ height: 420px; }
+
+    /* ======== RESPONSIVO ======== */
+    @media (max-width: 980px){
+      .info-grid{ grid-template-columns: 1fr; }
+      .banner img{ height: 340px; }
+    }
+    @media (max-width: 560px){
+      .photo-grid{ grid-template-columns: 1fr; }
+      .photo-grid img{ height: 200px; }
+      .banner img{ height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="local.html">Localização</a>
+    <a href="multimedia.html">Multimédia</a>
+    <a class="active" href="info.html">Informação</a>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <section class="info-wrap">
+    <h2>Informação sobre Moscovo</h2>
+
+    <div class="info-grid">
+      <!-- TABELA -->
+      <div class="card">
+        <p class="lead">Tabela com informações geográficas e populacionais:</p>
+
+        <div class="table-wrap">
+          <table class="fact-table">
+            <thead>
+              <tr>
+                <th>Categoria</th>
+                <th>Informação</th>
+                <th>Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th rowspan="3">Demografia</th>
+                <td>População</td>
+                <td>≈ 12,6 milhões</td>
+              </tr>
+              <tr>
+                <td>Densidade populacional</td>
+                <td>≈ 5 000 hab/km²</td>
+              </tr>
+              <tr>
+                <td>Língua</td>
+                <td>Russo</td>
+              </tr>
+
+              <tr>
+                <th rowspan="4">Geografia</th>
+                <td>Área</td>
+                <td>≈ 2 511 km²</td>
+              </tr>
+              <tr>
+                <td>Rio</td>
+                <td>Moskva</td>
+              </tr>
+              <tr>
+                <td>Região</td>
+                <td>Distrito Federal Central</td>
+              </tr>
+              <tr>
+                <td>País</td>
+                <td>Rússia</td>
+              </tr>
+
+              <tr>
+                <th rowspan="3">Outros</th>
+                <td>Fundação</td>
+                <td>1147</td>
+              </tr>
+              <tr>
+                <td>Fuso horário</td>
+                <td>MSK (UTC+3)</td>
+              </tr>
+              <tr>
+                <td>Website</td>
+                <td><a href="https://www.mos.ru" target="_blank" rel="noopener">mos.ru</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FOTOS + CURIOSIDADES -->
+      <div class="right-col">
+        <div class="photo-grid">
+          <img src="images/moscovo1.jpg" alt="Moscovo foto 1">
+          <img src="images/moscovo2.jpg" alt="Moscovo foto 2">
+        </div>
+
+        <div class="card">
+          <h3>Curiosidades sobre Moscovo</h3>
+          <ul>
+            <li>A <strong>Praça Vermelha</strong> e o <strong>Kremlin</strong> são Património Mundial da UNESCO.</li>
+            <li>O metro de Moscovo é famoso pela sua <strong>arquitetura palaciana</strong>.</li>
+            <li>Em <strong>Moscow City</strong> erguem-se alguns dos arranha-céus mais altos da Europa.</li>
+            <li>O rio <strong>Moskva</strong> atravessa a cidade e oferece cruzeiros urbanos.</li>
+            <li>Mais de <strong>500 parques e jardins</strong> estão espalhados pela cidade.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER FINAL -->
+    <div class="banner card">
+      <img src="images/moscovo4.jpg" alt="Panorâmica de Moscovo">
+    </div>
+  </section>
+
+</body>
 </html>
