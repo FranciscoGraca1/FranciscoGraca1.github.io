@@ -1,0 +1,148 @@
+/* ====== BASE / TEMA ====== */
+:root{
+  --bg:#f4f6f9;
+  --card:#ffffff;
+  --text:#1d2a35;
+  --muted:#5b6b79;
+  --accent:#04AA6D;
+  --grad: linear-gradient(90deg,#1e3c72,#2a5298);
+  --radius:14px;
+  --shadow:0 10px 24px rgba(0,0,0,.08);
+}
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  font-family: "Poppins", Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ====== NAVBAR (igual em todas as páginas) ====== */
+.navbar{
+  position: sticky; top:0; z-index:1000;
+  background: var(--grad);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  display:flex; gap:8px; align-items:center; padding:10px 14px;
+}
+.navbar a{
+  color:#fff; text-decoration:none; font-size:18px;
+  padding:10px 12px; border-radius:8px; transition:.2s;
+}
+.navbar a:hover{ background:rgba(255,255,255,.18); color:#ffeb3b; }
+.navbar a.active{ background: var(--accent); color:#fff; }
+
+/* ====== WRAPPER COMUM ====== */
+.wrap{ max-width:1280px; margin:22px auto; padding:0 18px; }
+
+/* ====== CARDS COMUNS ====== */
+.card{
+  background:var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding:28px;
+}
+.card h1{ margin:0 0 14px; font-size: 2.2rem; }
+.card p{ margin:0; color:var(--muted); font-size:1.1rem; }
+
+/* ====== HOME (index) ====== */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.card-img{
+  background:var(--card);
+  border-radius: var(--radius);
+  overflow:hidden;
+  box-shadow: var(--shadow);
+}
+.card-img img{
+  display:block; width:100%; height:260px; object-fit:cover;
+}
+figure{ margin:0; }
+figcaption{ padding:10px 12px; color:var(--muted); }
+.area{
+  height:120px; border:2px dashed #b9befa; border-radius:12px;
+  display:grid; place-items:center; color:#4f5399; background:#f1f2ff;
+}
+.botoes{ display:flex; gap:10px; flex-wrap:wrap; margin:.75rem 0 1rem; }
+.btn{
+  padding:10px 14px; border-radius:10px;
+  border:1px solid #00000018; background:#fff; cursor:pointer;
+}
+.btn.primario{ background:#5b6cff; color:#fff; border-color:#5b6cff; }
+.btn.fantasma{ background:transparent; }
+.amostra{
+  height:46px; display:grid; place-items:center; font-weight:700;
+  border:1px solid #00000012; border-radius:10px; background:#fafafe;
+}
+.linha{ display:flex; align-items:center; gap:10px; }
+.badge{ padding:6px 10px; border-radius:999px; background:#eef; font-weight:800; min-width:2ch; text-align:center; }
+
+/* ====== INFO (info.html) ====== */
+.info-wrap { max-width:1200px; margin:0 auto; padding:28px 16px; }
+.lead { margin:4px 0 14px; color:var(--muted); }
+.info-grid{ display:grid; grid-template-columns:1.2fr 1fr; gap:20px; }
+.table-wrap{ overflow-x:auto; }
+table.fact-table{ width:100%; border-collapse:collapse; min-width:560px; }
+.fact-table th, .fact-table td{
+  border:1px solid #dcdcdc; padding:12px 14px; text-align:left; vertical-align:top;
+}
+.fact-table thead th{ background:#f0f2f7; font-weight:700; }
+.fact-table tbody th{ background:#f8faff; width:160px; }
+.right-col{ display:grid; gap:20px; }
+.photo-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.photo-grid img, .banner img{
+  width:100%; height:220px; object-fit:cover; border-radius:12px; display:block;
+}
+.banner{ margin-top:22px; }
+.banner img{ height:420px; }
+
+/* ====== LOCAL (local.html) ====== */
+.header{
+  background-color:#f1f1f1; padding:30px; text-align:center;
+}
+.header img{ width:100%; height:260px; object-fit:cover; border-radius:12px; }
+main.local{ padding:16px; }
+footer.local{ text-align:center; padding:15px; background:#f1f1f1; margin-top:20px; }
+.map-embed{ width:100%; max-width:960px; height:450px; border:0; display:block; margin:12px auto 0; }
+
+/* ====== MULTIMÉDIA (multimedia.html) ====== */
+body.multimedia{ background:#0f2438; color:#fff; }
+.multimedia section{ min-height:100vh; padding:48px 20px; display:flex; flex-direction:column; align-items:center; justify-content:flex-start; text-align:center; }
+.hero-foto{ position:relative; min-height:100vh; overflow:hidden; display:grid; place-items:center; color:#fff; padding:0; }
+.hero-foto img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; z-index:0; }
+.hero-foto::after{ content:\"\"; position:absolute; inset:0; background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55)); z-index:1; }
+.hero-foto h1{ position:relative; z-index:2; font-size:clamp(2.2rem, 6vw, 4rem); margin:0; text-shadow:0 8px 24px rgba(0,0,0,.9); }
+.fotos{ background:#1a2f44; }
+.fotos h2, .video h2, .poesia h2{ color:#dbe6f6; }
+.galeria{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px; width:92%; margin:24px auto 0; }
+.galeria img{ width:100%; height:200px; object-fit:cover; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.35); transition: transform .25s ease; }
+.galeria img:hover{ transform:scale(1.04); }
+.video{ background:#203a56; }
+.video iframe{ width:80%; max-width:880px; height:460px; border:none; border-radius:14px; margin-top:20px; box-shadow:0 10px 24px rgba(0,0,0,.4); }
+.poesia{ background:#2b2050; }
+.poesia p{ max-width:640px; margin:0 auto; font-size:1.25rem; line-height:1.9; background:rgba(255,255,255,.1); padding:22px; border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.25); }
+.video-final{ position:relative; min-height:100vh; padding:0; display:grid; place-items:center; overflow:hidden; }
+.video-final video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.video-title{ position:relative; z-index:2; margin:0; font-size:clamp(2rem, 5vw, 3rem); font-weight:700; text-shadow:0 6px 18px rgba(0,0,0,.9); color:#fff; }
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 1024px){
+  .grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 980px){
+  .info-grid{ grid-template-columns:1fr; }
+  .banner img{ height:340px; }
+}
+@media (max-width: 620px){
+  .grid{ grid-template-columns: 1fr; }
+  .card-img img{ height:220px; }
+}
+@media (max-width: 560px){
+  .photo-grid{ grid-template-columns:1fr; }
+  .photo-grid img{ height:200px; }
+  .banner img{ height:260px; }
+  .video iframe{ width:92%; height:240px; }
+}
