@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página Multimédia</title>
+
+  <style>
+    /* ======== TEMA ======== */
+    :root{
+      --bg: #0f2438;
+      --text: #ffffff;
+      --muted: #dbe6f6;
+      --accent: #04AA6D;
+    }
+    html, body { margin: 0; padding: 0; }
+    body{
+      font-family: "Poppins", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ======== NAVBAR ======== */
+    #navbar{
+      position: sticky; top: 0; z-index: 1000;
+      background: linear-gradient(90deg,#1e3c72,#2a5298);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    #navbar a{
+      float: left; display: block; color: #fff;
+      text-decoration: none; padding: 16px 18px; font-size: 18px;
+      transition: .25s;
+    }
+    #navbar a:hover{ background: rgba(255,255,255,.15); color: #ffeb3b; }
+    #navbar a.active{ background: var(--accent); color: #fff; }
+
+    /* ======== SECÇÕES GERAIS ======== */
+    .multimedia section{
+      min-height: 100vh;
+      padding: 48px 20px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: start;
+      text-align: center;
+    }
+
+    /* ======== 1) HERO FOTO — usa IMG em ecrã inteiro ======== */
+    .multimedia section.hero-foto { padding: 0; } /* override do padding geral */
+
+    .hero-foto{
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      color: #fff;
+    }
+    .hero-foto img{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;               /* cobre a área toda */
+      object-position: center;         /* centrada */
+      z-index: 0;
+    }
+    .hero-foto::after{
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
+      z-index: 1;
+    }
+    .hero-foto h1{
+      position: relative; z-index: 2;
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      margin: 0;
+      text-shadow: 0 8px 24px rgba(0,0,0,.9);
+    }
+
+    /* ======== 2) GALERIA ======== */
+    .fotos{ background:#1a2f44; }
+    .fotos h2{ color: var(--muted); }
+    .galeria{
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+      gap: 20px; width: 92%; margin: 24px auto 0;
+    }
+    .galeria img{
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.35);
+      transition: transform .25s ease;
+    }
+    .galeria img:hover{ transform: scale(1.04); }
+
+    /* ======== 3) VÍDEO YOUTUBE ======== */
+    .video{ background:#203a56; }
+    .video h2{ color: var(--muted); }
+    .video iframe{
+      width: 80%; max-width: 880px; height: 460px;
+      border: none; border-radius: 14px; margin-top: 20px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.4);
+    }
+
+    /* ======== 4) POESIA ======== */
+    .poesia{ background:#2b2050; }
+    .poesia h2{ color: var(--muted); }
+    .poesia p{
+      max-width: 640px; margin: 0 auto;
+      font-size: 1.25rem; line-height: 1.9;
+      background: rgba(255,255,255,.1);
+      padding: 22px; border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+    }
+
+    /* ======== 5) VÍDEO FINAL EM LOOP ======== */
+    .video-final{
+      position: relative; min-height: 100vh; padding: 0;
+      display: grid; place-items: center; overflow: hidden;
+    }
+    .video-final video{
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; /* ocupa toda a secção */
+    }
+    .video-final .video-title{
+      position: relative; z-index: 2; margin: 0;
+      font-size: clamp(2rem, 5vw, 3rem); font-weight: 700;
+      text-shadow: 0 6px 18px rgba(0,0,0,.9);
+      color: #fff;
+    }
+
+    @media (max-width: 560px){
+      .video iframe{ width: 92%; height: 240px; }
+    }
+  </style>
+</head>
+<body class="multimedia">
+
+  <!-- NAVBAR -->
+  <div id="navbar">
+    <a href="index.html">Home</a>
+    <a href="local.html">Localização</a>
+    <a class="active" href="multimedia.html">Multimédia</a>
+    <a href="info.html">Informação</a>
+  </div>
+
+  <!-- 1) FOTO ÚNICA A ECRÃ INTEIRO -->
+  <section class="hero-foto">
+    <img src="images/moscovo10.jpg" alt="Vista de Moscovo">
+    <h1>Multimédia</h1>
+  </section>
+
+  <!-- 2) FOTOGRAFIAS -->
+  <section class="fotos">
+    <h2>Fotografias 📸</h2>
+    <div class="galeria">
+      <img src="images/moscovo1.jpg" alt="Moscovo 1">
+      <img src="images/moscovo2.jpg" alt="Moscovo 2">
+      <img src="images/moscovo3.jpg" alt="Moscovo 3">
+      <img src="images/moscovo4.jpg" alt="Moscovo 4">
+      <img src="images/moscovo5.jpg" alt="Moscovo 5">
+      <img src="images/moscovo6.jpg" alt="Moscovo 6">
+    </div>
+  </section>
+
+  <!-- 3) VÍDEO YOUTUBE -->
+  <section class="video">
+    <h2>Vídeo 🎥</h2>
+    <iframe src="https://www.youtube.com/embed/S_dfq9rFWAE?si=XAjpUhc9xaBGTc1f"
+            title="YouTube video player" allowfullscreen></iframe>
+  </section>
+
+  <!-- 4) POESIA -->
+  <section class="poesia">
+    <h2>Poesia ✍️</h2>
+    <p>
+      Na neve branca, Moscovo desperta,<br>
+      torres vermelhas, história aberta.<br>
+      Entre catedrais e arranha-céus,<br>
+      o passado e o futuro andam lado a lado, teus.
+    </p>
+  </section>
+
+  <!-- 5) ÚLTIMA SECÇÃO — VÍDEO EM LOOP -->
+  <section class="video-final">
+    <h2 class="video-title">A vida de Moscovo</h2>
+    <video autoplay muted loop playsinline>
+      <source src="https://www.pexels.com/pt-br/download/video/5058324/" type="video/mp4">
+      O teu navegador não suporta a tag de vídeo.
+    </video>
+  </section>
+
+</body>
+</html>
