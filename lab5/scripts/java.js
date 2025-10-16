@@ -50,7 +50,6 @@ const input = document.getElementById('tecla');
 
   //cor em ingles
 
-   const input  = document.getElementById('tecla');
   const ingles = document.getElementById('ingles');
 
   function corIngles() {
