@@ -4,13 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Loja</title>
-  <link rel="stylesheet" href="/lab6/css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="topo">
-    <h1>Loja</h1>
-
     <nav aria-label="Secções do site">
+      <a href="#" class="brand">
+        <img src="images/ninja.jpg" alt="Logótipo da Loja" />
+        <span>Loja DEISI</span>
+      </a>
       <ul class="menu">
         <li><a href="#produtos">Produtos</a></li>
         <li><a href="#cesto">Cesto</a></li>
@@ -22,15 +24,23 @@
     <section id="produtos" aria-labelledby="tit-produtos">
       <h2 id="tit-produtos">Selecione os seus Produtos</h2>
 
-      <!-- estado (loading/erros/sucesso) -->
       <div id="estado" role="status" aria-live="polite"></div>
 
-      <!-- Filtro por categoria -->
-      <div class="filtro">
-        <label for="filtro-categoria">Filtrar por categoria:</label>
+      <div class="barra-controle" aria-label="Filtros e ordenação">
+        <label for="filtro-categoria">Filtrar:</label>
         <select id="filtro-categoria">
           <option value="">Todas as categorias</option>
         </select>
+
+        <label for="ordenacao">Ordenar:</label>
+        <select id="ordenacao">
+          <option value="">Ordenar pelo preço</option>
+          <option value="preco-asc">Preço: mais barato ↑</option>
+          <option value="preco-desc">Preço: mais caro ↓</option>
+        </select>
+
+        <label for="pesquisa">Procurar</label>
+        <input id="pesquisa" type="search" placeholder="pesquise por produto" />
       </div>
 
       <section id="lista-produtos" class="grade-produtos" aria-label="Lista de produtos"></section>
@@ -38,10 +48,34 @@
 
     <section id="cesto" aria-labelledby="tit-cesto">
       <h2 id="tit-cesto">Cesto</h2>
-
       <ul id="lista-cesto" class="lista-cesto" aria-live="polite"></ul>
-
       <p class="total"><strong>Total:</strong> <output id="total">€0,00</output></p>
+
+      <!-- Checkout -->
+      <form id="checkout-form" class="checkout" autocomplete="on">
+        <fieldset>
+          <legend>Checkout</legend>
+
+          <label class="linha">
+            <input id="chk-estudante" type="checkbox" />
+            <span>És estudante do DEISI?</span>
+          </label>
+
+          <label class="linha">
+            <span>Cupão de desconto:</span>
+            <input id="inp-cupao" type="text" placeholder="ex.: black-friday" />
+          </label>
+
+          <label class="linha">
+            <span>Nome:</span>
+            <input id="inp-nome" type="text" placeholder="Maria Lisboa" />
+          </label>
+
+          <button id="btn-comprar" type="submit">Comprar</button>
+        </fieldset>
+      </form>
+
+      <div id="checkout-resultado" class="checkout-resultado" aria-live="polite"></div>
     </section>
   </main>
 
@@ -49,7 +83,6 @@
     <p>© <time id="ano"></time></p>
   </footer>
 
-  <!-- ÚNICO script (produtos.js removido) -->
-  <script src="/lab6/scripts/script.js"></script>
+  <script src="scripts/script.js" defer></script>
 </body>
 </html>
