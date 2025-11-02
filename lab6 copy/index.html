@@ -19,9 +19,19 @@
   </header>
 
   <main>
-
     <section id="produtos" aria-labelledby="tit-produtos">
       <h2 id="tit-produtos">Selecione os seus Produtos</h2>
+
+      <!-- estado (loading/erros/sucesso) -->
+      <div id="estado" role="status" aria-live="polite"></div>
+
+      <!-- Filtro por categoria -->
+      <div class="filtro">
+        <label for="filtro-categoria">Filtrar por categoria:</label>
+        <select id="filtro-categoria">
+          <option value="">Todas as categorias</option>
+        </select>
+      </div>
 
       <section id="lista-produtos" class="grade-produtos" aria-label="Lista de produtos"></section>
     </section>
@@ -36,9 +46,10 @@
   </main>
 
   <footer>
-    
+    <p>© <time id="ano"></time></p>
   </footer>
-  <script src="/lab6/scripts/produtos.js"></script>
+
+  <!-- ÚNICO script (produtos.js removido) -->
   <script src="/lab6/scripts/script.js"></script>
 </body>
 </html>
