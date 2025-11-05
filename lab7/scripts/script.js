@@ -1,8 +1,4 @@
-/* =========================================================
-   Loja DEISI — Script principal (limpo e comentado)
-========================================================= */
-
-/* =============== CONFIG DA API =============== */
+/*CONFIG DA API*/
 const API_BASE = 'https://deisishop.pythonanywhere.com';
 const PATH = {
   produtos: '/products',
@@ -10,7 +6,7 @@ const PATH = {
   buy: '/buy/'
 };
 
-/* =============== ESTADO DA APP =============== */
+/* ESTADO DA APP  */
 let todosOsProdutos = [];               // cache dos produtos
 let cesto = [];                         // itens no cesto (também em localStorage)
 const estadoUI = {                      // filtro/ordenação/pesquisa
@@ -19,7 +15,7 @@ const estadoUI = {                      // filtro/ordenação/pesquisa
   pesquisa: ''
 };
 
-/* =============== HELPERS =============== */
+/* HELPERS */
 const $ = (id) => document.getElementById(id);
 const norm = (s) => (s ?? '').toString().trim().toLowerCase();
 const catKey = (s) => norm(s);
@@ -37,13 +33,13 @@ function normalizarProduto(p) {
     category,
     categoryKey: catKey(category),
 
-    // rating da API (ex.: { rating: { rate: 4.2, count: 120 } })
+    // rating da API
     ratingRate: Number(p.rating?.rate ?? p.rate ?? 0),   // 0..5
     ratingCount: Number(p.rating?.count ?? p.count ?? 0) // nº de avaliações
   };
 }
 
-/* =============== CHAMADAS À API =============== */
+// CHAMADAS À API
 async function getJSON(path) {
   const res = await fetch(API_BASE + path, {
     headers: { Accept: 'application/json' },
@@ -64,7 +60,7 @@ async function postJSON(path, body) {
   return data;
 }
 
-/* =============== ARRANQUE =============== */
+// ARRANQUE
 document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
@@ -100,7 +96,7 @@ async function init() {
   mostrarCesto();
 }
 
-/* =============== FILTRO / ORDENAR / PESQUISAR =============== */
+// FILTRO / ORDENAR / PESQUISAR
 function preencherSelectCategorias(categorias) {
   const select = $('filtro-categoria');
   if (!select) return;
@@ -220,7 +216,7 @@ function criarProduto(produto) {
   return artigo;
 }
 
-/* =============== CESTO (localStorage) =============== */
+/*CESTO (localStorage)*/
 function guardarCesto() {
   try { localStorage.setItem('meuCesto', JSON.stringify(cesto)); }
   catch(e){ console.warn('localStorage guardar falhou:', e); }
@@ -264,7 +260,7 @@ function mostrarCesto() {
   out.textContent = '€' + total.toFixed(2);
 }
 
-/* =============== CHECKOUT (POST /buy/) =============== */
+/*CHECKOUT (POST /buy/)*/
 function ligarCheckout() {
   const form = $('checkout-form');
   const btn  = $('btn-comprar');
